@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose =  require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -13,10 +13,13 @@ const userSchema = new Schema({
         required: true,
         min: 4
     }
+    // TODO: Add the name + email in the schema and add it in the endpoints
+    //name: {}
+    //email: {}
 }, {
     timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
+const Users = mongoose.model('User', userSchema);
 
-module.exports = User;
+module.exports = Users;
